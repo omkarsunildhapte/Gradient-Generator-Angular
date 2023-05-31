@@ -1,1 +1,22 @@
-<p>header works!</p>
+<mat-toolbar color="primary">
+  <a routerLink="/">ColorPalettePro</a>
+  <span class="spacer"></span>
+  <button mat-icon-button (click)="toggleNavigation()">
+    <mat-icon>list</mat-icon>
+  </button>
+  <ul class="navigation" [ngClass]="{ show: showNavigation }">
+    <button
+      mat-icon-button
+      class="close-button"
+      *ngIf="showNavigation"
+      (click)="toggleNavigation()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+    <a mat-button routerLink="/">PALETTES</a>
+    <a mat-button routerLink="/gradinet">GRADIENT</a>
+    <a mat-button routerLink="./mulitplecolorgraditent">ADVANCED</a>
+    <a mat-button routerLink="././contact" target="_blank">CONTACT</a>
+  </ul>
+</mat-toolbar>
+<router-outlet></router-outlet>

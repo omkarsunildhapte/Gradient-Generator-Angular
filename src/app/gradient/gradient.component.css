@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 12px;
+}
+.row {
+  padding: 55px;
+}
+.showcolor {
+  display: flex;
+  width: 100%;
+  border: 2px solid;
+  height: 120px;
+}
