@@ -6,6 +6,12 @@ a {
   padding: 12px 20px;
   color: #fff;
 }
+.navigation a {
+  text-decoration: none;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 12px;
+}
 a:hover {
   color: #8d98d8;
 }

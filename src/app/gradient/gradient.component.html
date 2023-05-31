@@ -2,8 +2,32 @@
   <div class="row">
     <div class="col">
       <h1>Generate a CSS Color Gradient</h1>
-      <div class="showcolor"></div>
-      <div class="formgenrator"></div>
+      <div class="showcolor" [style.background]="selectedColor"></div>
+      <div class="formgenrator">
+        <p>Gradient Type</p>
+        <select (change)="onSelect($event.target)">
+          <option value="">Select an option</option>
+          <option *ngFor="let option of options" [value]="option">
+            {{ option.name }}
+          </option>
+        </select>
+        <p>Shapes</p>
+        <select (change)="onSelect($event.target)">
+          <option value="">Select an option</option>
+          <option *ngFor="let shapes of shapes" [value]="shapes">
+            {{ shapes.name }}
+          </option>
+        </select>
+        <p>Angle</p>
+        <input type="text" [(ngModel)]="degree" maxlength="6" />
+        <p>Choose Color</p>
+        <input [(colorPicker)]="color1" [style.background]="color1" readonly />
+        <input [(colorPicker)]="color2" [style.background]="color2" readonly />
+        <button (click)="getLinearGradient()">Generate Gradient</button>
+        <p>Copy Value</p>
+        <input type="text" class="showValue" [value]="selectedColor" readonly />
+        <mat-icon>content_copy</mat-icon>
+      </div>
     </div>
   </div>
 </div>

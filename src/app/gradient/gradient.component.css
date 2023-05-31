@@ -13,3 +13,9 @@
   border: 2px solid;
   height: 120px;
 }
+.showValue {
+  display: flex;
+  width: 100%;
+  border: 2px solid;
+  height: 50px;
+}
