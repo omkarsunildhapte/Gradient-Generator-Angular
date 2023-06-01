@@ -6,27 +6,42 @@
       <div class="formgenrator">
         <p>Gradient Type</p>
         <select (change)="onSelect($event.target)">
-          <option value="">Select an option</option>
-          <option *ngFor="let option of options" [value]="option">
+          <option value="">Select an Option</option>
+          <option *ngFor="let option of options" [value]="option.name">
             {{ option.name }}
           </option>
         </select>
-        <p>Shapes</p>
-        <select (change)="onSelect($event.target)">
-          <option value="">Select an option</option>
-          <option *ngFor="let shapes of shapes" [value]="shapes">
-            {{ shapes.name }}
-          </option>
-        </select>
-        <p>Angle</p>
-        <input type="text" [(ngModel)]="degree" maxlength="6" />
+        <div class="shape" [style.display]="shapeVisible ? 'block' : 'none'">
+          <p>Shapes</p>
+          <select (change)="onSelectShape($event.target)">
+            <option value="">Select an Shape</option>
+            <option *ngFor="let shapes of shapes" [value]="shapes.name">
+              {{ shapes.name }}
+            </option>
+          </select>
+        </div>
+        <div class="angles" [style.display]="!shapeVisible ? 'block' : 'none'">
+          <p>Angle</p>
+          <input type="number" [(ngModel)]="degree" maxlength="6" />
+          <span>Degree</span>
+        </div>
         <p>Choose Color</p>
         <input [(colorPicker)]="color1" [style.background]="color1" readonly />
         <input [(colorPicker)]="color2" [style.background]="color2" readonly />
         <button (click)="getLinearGradient()">Generate Gradient</button>
-        <p>Copy Value</p>
-        <input type="text" class="showValue" [value]="selectedColor" readonly />
-        <mat-icon>content_copy</mat-icon>
+      </div>
+      <div class="showGradient">
+        <span>Copy Value</span>
+        <input
+          type="text"
+          class="showValue"
+          #colorvalue
+          [value]="selectedColor"
+          readonly
+        />
+        <button (click)="copyValue(colorvalue.value)">
+          <mat-icon>content_copy</mat-icon>
+        </button>
       </div>
     </div>
   </div>

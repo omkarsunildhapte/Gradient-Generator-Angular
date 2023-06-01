@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { GradientComponent } from './gradient/gradient.component';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +32,7 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     ColorPickerModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -15,7 +15,11 @@
 }
 .showValue {
   display: flex;
-  width: 100%;
+  width: 70%;
   border: 2px solid;
   height: 50px;
+}
+.showGradient {
+  display: flex;
+  width: 100%;
 }
