@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 export class GradientComponent {
   selectedOption: string = '';
   selectedShape: string = '';
-  color1: string = '';
-  color2: string = '';
+  color1: string = '#051937';
+  color2: string = '#A8EB12';
   selectedColor: string = '';
-  degree: string = '';
+  degree: number = 0;
 
   options: any[] = [
     { id: 1, name: 'Linear Gradient' },
@@ -20,12 +20,12 @@ export class GradientComponent {
   ];
 
   shapes: any[] = [
-    { id: 1, name: 'circle' },
-    { id: 2, name: 'ellipse' },
-    { id: 3, name: 'closest-side' },
-    { id: 4, name: 'closest-corner' },
-    { id: 4, name: 'farthest-side' },
-    { id: 4, name: 'farthest-corner' }
+    { id: 1, name: 'Circle' },
+    { id: 2, name: 'Ellipse' },
+    { id: 3, name: 'Closest Side' },
+    { id: 4, name: 'Closest Corner' },
+    { id: 4, name: 'Farthest Side' },
+    { id: 4, name: 'Farthest Corner' }
   ];
 
   shapeVisible: boolean = false;
@@ -43,14 +43,14 @@ export class GradientComponent {
       alert('Please select a valid gradient type')
     }
     if (!this.validColor) {
-      alert('please select a color');
+      alert('Please select a color');
 
     }
-    if (this.validDegree) {
-      alert('please select a degree');
+    if (!this.validDegree) {
+      alert('Please enter valid a degree in range 0 to 360 degrees');
     }
 
-    if ('Linear Gradient' === this.selectedOption) {
+    else if ('Linear Gradient' === this.selectedOption) {
       this.selectedColor = `linear-gradient(${this.degree}deg, ${this.color1}, ${this.color2})`;
     } else if (this.selectedOption === 'Repeating Linear Gradient') {
       this.selectedColor = `repeating-linear-gradient(${this.degree}deg, ${this.color1} 40%, ${this.color2} 40%, ${this.color1} 20%, ${this.color2})`;
@@ -82,6 +82,7 @@ export class GradientComponent {
     return this.selectedOption !== '';
   }
   get validDegree() {
-    return this.degree !== " ";
+    return this.degree !== null && this.degree >= 0 && this.degree <= 360;
   }
+
 }

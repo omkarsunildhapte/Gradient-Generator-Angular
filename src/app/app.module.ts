@@ -14,6 +14,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { GradientComponent } from './gradient/gradient.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
+import { DegreeDirective } from './degree.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GradientComponent,
     HomeComponent,
     MulitpleColorGraditentComponent,
-    ContactComponent
+    ContactComponent,
+    FooterComponent,
+    DegreeDirective
   ],
   imports: [
     BrowserModule,

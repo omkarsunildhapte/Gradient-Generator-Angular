@@ -7,8 +7,8 @@ import { MulitpleColorGraditentComponent } from './mulitple-color-graditent/muli
 
 
 const routes: Routes = [
-  { path: './', component: HomeComponent },
-  { path: 'gradinet', component: GradientComponent },
+  { path: 'home', component: HomeComponent },
+  { path: '', component: GradientComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'mulitplecolorgraditent', component: MulitpleColorGraditentComponent }
 ];
