@@ -38,7 +38,7 @@ mat-icon {
     display: none;
   }
 
-  .navigation.show {
+  .navigation .show {
     display: grid;
     position: absolute;
     right: 0%;
