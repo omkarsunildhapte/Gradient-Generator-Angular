@@ -62,7 +62,8 @@ export class MulitpleColorGraditentComponent {
       const gradientColors = this.inputFields.map(input => input.inputColor);
       this.selectedColor = `linear-gradient(${this.degree}deg, ${this.color1}, ${this.color2} ,${gradientColors})`;
     } else if (this.selectedOption === 'Repeating Linear Gradient') {
-      this.selectedColor = `repeating-linear-gradient(${this.degree}deg, ${this.color1} 40%, ${this.color2} 40%, ${this.color1} 20%, ${this.color2})`;
+      const gradientColors = this.inputFields.map(input => input.inputColor);
+      this.selectedColor = `repeating-linear-gradient(${this.degree}deg, ${this.color1} 40%, ${this.color2} 40%, ${this.color1} 20%, ${gradientColors})`;
     }
     else if (this.selectedOption === 'Radial Gradient') {
       const gradientColors = this.inputFields.map(input => input.inputColor);

@@ -50,7 +50,7 @@ export class GradientComponent {
       alert('Please enter valid a degree in range 0 to 360 degrees');
     }
 
-    else if ('Linear Gradient' === this.selectedOption) {
+    else if (this.selectedOption === 'Linear Gradient') {
       this.selectedColor = `linear-gradient(${this.degree}deg, ${this.color1}, ${this.color2})`;
     } else if (this.selectedOption === 'Repeating Linear Gradient') {
       this.selectedColor = `repeating-linear-gradient(${this.degree}deg, ${this.color1} 40%, ${this.color2} 40%, ${this.color1} 20%, ${this.color2})`;
