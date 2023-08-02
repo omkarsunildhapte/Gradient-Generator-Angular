@@ -1,109 +1,115 @@
-<!-- src/app/app.component.html -->
-<h1>My GitHub and LinkedIn Details</h1>
+<app-header></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card bg-transparent border-0 ">
+        <div class="card-title mt-4">
+          <h1 class="text-center fw-bolder ">ColorPalettePro</h1>
+        </div>
+        <div class="card-body">
+          <div class="card bg-transparent border-0 ">
+            <div class="card-title">
+              <h1 class="border-bottom">Introduction:</h1>
+            </div>
+            <div class="card-body">
+              Welcome to ColorfulPalette, a powerful and user-friendly color generator that puts the world of vibrant
+              colors at your
+              fingertips. Whether you're a designer, artist, or developer, ColorfulPalette is here to assist you in
+              exploring,
+              manipulating, and generating beautiful color palettes for your projects. With its intuitive interface and
+              diverse
+              features, you'll be inspired to create eye-catching designs effortlessly.
+            </div>
+          </div>
+          <div class="card bg-transparent border-0 ">
+            <div class="card-title">
+              <h4 class="border-bottom">Key Features:</h4>
+            </div>
+            <div class="card-body">
+              <ul>
+                <li> Intuitive Color Picker:</li>
+                <p>Use our intuitive color picker to select your desired colors. Pick from a wide spectrum using the
+                  color
+                  wheel or manually set RGB, HSL values, or HEX codes. The color picker makes it easy to capture the
+                  exact
+                  shades you envision.
+                </p>
+                <li>Color Manipulation:</li>
+                <p>Take control of your colors with our manipulation tools. Adjust brightness, contrast, and generate
+                  shades or tints to fine-tune your chosen colors. Explore complementary, analogous, and triadic colors
+                  to
+                  find the perfect harmonies for your designs.
+                </p>
+                <li>Color Palettes:</li>
+                <p>Organize your colors with custom color palettes. Save and export your favorite combinations for easy
+                  access later. Whether you're creating a website theme or a brand identity, our color palettes keep
+                  everything organized and accessible.
+                </p>
+                <li>Real-time Preview:</li>
+                <p> Visualize your color selections in real-time. See how your chosen colors blend together on our
+                  preview
+                  canvas, giving you a glimpse of how they would appear in your design or project.
+                </p>
 
-<div class="github-info">
-  <h2>GitHub</h2>
-  <p>Username: YourGitHubUsername</p>
-  <p>
-    Repositories:
-    <a
-      href="https://github.com/YourGitHubUsername?tab=repositories"
-      target="_blank"
-      >View Repositories</a
-    >
-  </p>
+                <li>Color Conversion:</li>
+                <p>Easily convert colors between RGB, HSL, and HEX formats. Seamlessly switch between different color
+                  models to ensure consistency and compatibility across your projects.
+                </p>
+                <li>Responsiveness:</li>
+                <p>ColorfulPalette is designed to be responsive, ensuring you can create and explore colors on any
+                  device
+                  - from your desktop to your tablet or smartphone.
+                </p>
+              </ul>
+            </div>
+          </div>
+          <div class="card bg-transparent border-0 ">
+            <div class="card-title">
+              <h4 class="border-bottom"> How to Use ColorfulPalette:</h4>
+            </div>
+            <div class="card-body">
+              <li>Color Selection:</li>
+              <p>Click and drag on the color wheel to select your base color.Use the RGB and HSL sliders to fine-tune
+                the color components. Input a HEX code to instantly apply a specific color.
+              </p>
+              <li>Color Manipulation: </li>
+              <p>Adjust the brightness and contrast using intuitive sliders.Generate shades or tints of your selected
+                color for additional variations.Explore complementary, analogous, and triadic colors to create
+                well-balanced palettes.</p>
+              <li>Color Palette Creation:</li>
+              <p>Save your color combinations to custom palettes.
+                Name your palettes for easy identification and reuse.
+                Export your palettes for use in your favorite design tools.</p>
+              <li>Real-time Preview:</li>
+              <p> Observe how your chosen colors interact on the preview canvas.
+                Experiment with different color combinations to find the perfect fit.</p>
+              <li> Color Conversion:</li>
+              <p>Convert colors between RGB, HSL, and HEX formats seamlessly.
+                Use the converted codes in your projects without hassle</p>
+            </div>
+          </div>
+          <div class="card border-0 bg-transparent ">
+            <div class="d-flex justify-content-center">
+              <a href="https://www.facebook.com/omkar.dhapte.31/" target="_blank" mat-raised-button class="mx-3"
+                color="primary">
+                Facebook
+              </a>
+              <a href="https://twitter.com/dhapte55187" target="_blank" mat-raised-button class="mx-3" color="primary">
+                Twitter
+              </a>
+              <a href="https://www.instagram.com/omkardhapte22/?igshid=MzNlNGNkZWQ4Mg%3D%3D" target="_blank"
+                mat-raised-button class="mx-3" color="primary">
+                Instagram
+              </a>
+              <a href="https://www.linkedin.com/in/omkar-dhapte-103380226/" target="_blank" mat-raised-button
+                class="mx-3" color="primary">
+                Linkedin
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="linkedin-info">
-  <h2>LinkedIn</h2>
-  <p>
-    Profile:
-    <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank"
-      >View Profile</a
-    >
-  </p>
-</div>
-
-<h1>Gradient-Generator Project</h1>
-
-<p>
-  The Gradient-Generator project is a web application developed using Angular, a
-  popular JavaScript framework for building dynamic web applications. It allows
-  users to create beautiful and customizable gradients for their websites or
-  applications.
-</p>
-
-<p>The main features of the Gradient-Generator project include:</p>
-
-<ul>
-  <li>
-    Color picker: Users can select colors to create a gradient by choosing from
-    a color palette or manually entering the hexadecimal color codes.
-  </li>
-  <li>
-    Gradient customization: Users can adjust various parameters such as gradient
-    direction, angle, opacity, and color stops to create unique and visually
-    appealing gradients.
-  </li>
-  <li>
-    Preview and code generation: The application provides a real-time preview of
-    the gradient and generates the corresponding CSS code that users can easily
-    copy and use in their projects.
-  </li>
-  <li>
-    Save and share gradients: Users can save their favorite gradients and share
-    them with others by generating a unique URL for each gradient.
-  </li>
-</ul>
-
-<p>
-  The Gradient-Generator project demonstrates the use of Angular's components,
-  data binding, event handling, and routing capabilities to create a responsive
-  and interactive user interface.
-</p>
-
-<!-- Additional project details and screenshots can be added here -->
-
-<h2>Web Development</h2>
-
-<p>
-  Web development is the process of creating websites or web applications using
-  a combination of programming languages, frameworks, and technologies. It
-  involves designing, building, and maintaining websites that are accessible,
-  user-friendly, and visually appealing.
-</p>
-
-<p>Key components of web development include:</p>
-
-<ul>
-  <li>
-    Front-end development: This focuses on creating the user interface (UI) and
-    user experience (UX) of a website using HTML, CSS, and JavaScript. It
-    involves designing the layout, adding styles, and implementing interactive
-    elements.
-  </li>
-  <li>
-    Back-end development: This involves implementing server-side logic and
-    database interactions to handle data processing, storage, and retrieval.
-    Common technologies used for back-end development include Node.js, Python,
-    Ruby, and PHP.
-  </li>
-  <li>
-    Database management: Websites often require storing and retrieving data.
-    Database management systems such as MySQL, PostgreSQL, MongoDB, or Firebase
-    are used to handle data storage and retrieval.
-  </li>
-  <li>
-    Web servers and hosting: Web servers like Apache or Nginx are used to serve
-    web pages to users. Websites are typically hosted on servers or cloud
-    platforms such as AWS, Azure, or Heroku.
-  </li>
-</ul>
-
-<p>
-  Web development allows businesses and individuals to create a strong online
-  presence, showcase their products or services, interact with customers, and
-  perform various business functions online.
-</p>
-
-<!-- Additional information about web development can be added here -->
+<app-footer></app-footer>

@@ -4,19 +4,13 @@
   <button mat-icon-button (click)="toggleNavigation()">
     <mat-icon>list</mat-icon>
   </button>
-  <ul class="navigation" [ngClass]="{ show: showNavigation }">
-    <button
-      mat-icon-button
-      class="close-button"
-      *ngIf="showNavigation"
-      (click)="toggleNavigation()"
-    >
+  <ul class="navigation mt-3" [ngClass]="{ show: showNavigation }">
+    <button mat-icon-button class="close-button" *ngIf="showNavigation" (click)="toggleNavigation()">
       <mat-icon>close</mat-icon>
     </button>
-    <a mat-button routerLink="/home">PALETTES</a>
+    <!-- <a mat-button routerLink="/home">PALETTES</a> -->
     <a mat-button routerLink="">GRADIENT</a>
     <a mat-button routerLink="/mulitplecolorgraditent">ADVANCED</a>
     <a mat-button routerLink="/contact">CONTACT</a>
   </ul>
 </mat-toolbar>
-<router-outlet></router-outlet>

@@ -1,64 +1,56 @@
-<div class="container" [style.background]="selectedColor">
+<app-header></app-header>
+<div class="container mt-5 ">
   <div class="row">
-    <div class="col">
-      <h1>Generate a CSS Color Gradient</h1>
-    </div>
-    <div class="col">
-      <div class="formgenrator">
-        <p>Gradient Type</p>
-        <select (change)="onSelect($event.target)">
-          <option value="">Select an Option</option>
-          <option *ngFor="let option of options" [value]="option.name">
-            {{ option.name }}
-          </option>
-        </select>
-      </div>
-      <div class="shape" [style.display]="shapeVisible ? 'block' : 'none'">
-        <p>Shapes</p>
-        <select (change)="onSelectShape($event.target)">
-          <option value="">Select an Shape</option>
-          <option *ngFor="let shapes of shapes" [value]="shapes.name">
-            {{ shapes.name }}
-          </option>
-        </select>
+    <div class="card bg-transparent border-0">
+      <div class="card-title">
+        <h1 class="text-center fs-2 fw-bold text-white">Generate a CSS Color Gradient</h1>
       </div>
     </div>
-    <div class="col">
-      <div class="angles" [style.display]="!shapeVisible ? 'block' : 'none'">
-        <p>Angle</p>
-        <input type="text" [(ngModel)]="degree" maxlength="3" appDegree />
-      </div>
-      <div class="col">
-        <p>Choose Color</p>
-        <div class="colorpicker">
-          <input
-            [(colorPicker)]="color1"
-            [style.background]="color1"
-            readonly
-          />
-          <input
-            [(colorPicker)]="color2"
-            [style.background]="color2"
-            readonly
-          />
+    <div class="card-body">
+      <div class="d-flex justify-content-center flex-column gap-0">
+        <mat-form-field appearance="outline">
+          <mat-label>Gradient Type</mat-label>
+          <mat-select (selectionChange)="onSelect($event)">
+            <mat-option value="">Select an Option</mat-option>
+            <mat-option *ngFor="let option of options" [value]="option.name">
+              {{ option.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <ng-container *ngIf="selectedOption=='Radial Gradient'">
+          <mat-form-field appearance="outline">
+            <mat-label>Shapes</mat-label>
+            <mat-select (selectionChange)="onSelectShape($event)">
+              <mat-option value="">Select an Shape</mat-option>
+              <mat-option *ngFor="let shapes of shapes" [value]="shapes.name">
+                {{ shapes.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ng-container>
+        <ng-container *ngIf="selectedOption!='Radial Gradient'">
+          <mat-form-field appearance="outline">
+            <mat-label>Angle</mat-label>
+            <input matInput type="text" [(ngModel)]="degree" maxlength="3" appDegree />
+          </mat-form-field>
+        </ng-container>
+        <div class="col">
+          <div class="d-flex justify-content-around">
+            <input [(colorPicker)]="color1" class="bd text-white" [value]="color1" [style.background]="color1"
+              readonly />
+            <input [(colorPicker)]="color2" class="bd text-white" [value]="color2" [style.background]="color2"
+              readonly />
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="colorpicker">
-          <button (click)="getLinearGradient()">Generate Gradient</button>
+        <div class="col d-flex justify-content-center gap-0">
+          <button mat-raised-button class="bd" color="primary" (click)="getLinearGradient()">Generate Gradient</button>
         </div>
-      </div>
-      <div class="col">
-        <p>Copy Value</p>
-        <div class="result">
-          <input
-            type="text"
-            class="showValue"
-            #colorvalue
-            [value]="selectedColor"
-            readonly
-          />
-          <button (click)="copyValue(colorvalue.value)">
+        <div class="col d-flex justify-content-center">
+          <mat-form-field appearance="outline" class="w-75">
+            <mat-label>Copy Value</mat-label>
+            <input matInput type="text" #colorvalue [value]="selectedColor" readonly />
+          </mat-form-field>
+          <button mat-icon-button (click)="copyValue(colorvalue.value)">
             <mat-icon>content_copy</mat-icon>
           </button>
         </div>
@@ -66,3 +58,4 @@
     </div>
   </div>
 </div>
+<app-footer></app-footer>

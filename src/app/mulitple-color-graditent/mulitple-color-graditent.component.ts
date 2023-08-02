@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-mulitple-color-graditent',
@@ -10,7 +10,7 @@ export class MulitpleColorGraditentComponent {
   selectedShape: string = '';
   color1: string = '#051937';
   color2: string = '#A8EB12';
-  selectedColor: string = '';
+  selectedColor: string = 'linear-gradient(23deg, #0e6af4, #33eb12)';
   degree: number = 0;
 
   options: any[] = [
@@ -28,11 +28,12 @@ export class MulitpleColorGraditentComponent {
     { id: 4, name: 'Farthest Side' },
     { id: 4, name: 'Farthest Corner' }
   ];
-
   shapeVisible: boolean = false;
-
-
   inputFields: { inputColor: string }[] = [];
+  constructor(private renderer: Renderer2) {
+    this.setBodyBackground();
+  }
+
   addInputField() {
     this.inputFields.push({ inputColor: '' });
   }
@@ -72,6 +73,11 @@ export class MulitpleColorGraditentComponent {
       const gradientColors = this.inputFields.map(input => input.inputColor);
       this.selectedColor = `conic-gradient(from ${this.degree}deg, ${this.color1}, ${this.color2},${gradientColors})`;
     }
+    this.setBodyBackground();
+
+  }
+  setBodyBackground() {
+    this.renderer.setStyle(document.body, 'background', this.selectedColor);
   }
   copyValue(value: string) {
     navigator.clipboard.writeText(value)
