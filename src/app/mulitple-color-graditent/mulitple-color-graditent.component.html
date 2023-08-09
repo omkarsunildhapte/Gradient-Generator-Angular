@@ -1,14 +1,14 @@
 <app-header></app-header>
-<div class="container">
+<div class="container ">
   <div class="card mt-5 border-0 bg-transparent">
     <div class="card-title">
       <div class="d-flex align-items-center justify-content-center ">
-        <h1>Generate a CSS Color Gradient</h1>
+        <h1 class="fw-bold text-white ">Generate a CSS Color Gradient</h1>
       </div>
     </div>
     <div class="card-body">
-      <div class="d-flex justify-content-center flex-column gap-0">
-        <mat-form-field appearance="outline">
+      <div class="d-flex justify-content-center flex-column align-items-center ">
+        <mat-form-field appearance="fill" class="w-75 ">
           <mat-label>Gradient Type</mat-label>
           <mat-select (selectionChange)="onSelect($event)">
             <mat-option value="">Select an Option</mat-option>
@@ -18,7 +18,7 @@
           </mat-select>
         </mat-form-field>
         <ng-container *ngIf="selectedOption=='Radial Gradient'">
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="fill" class="w-75 ">
             <mat-label>Shapes</mat-label>
             <mat-select (selectionChange)="onSelectShape($event)">
               <mat-option value="">Select an Shape</mat-option>
@@ -29,21 +29,21 @@
           </mat-form-field>
         </ng-container>
         <ng-container *ngIf="selectedOption!='Radial Gradient'">
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="fill" class="w-75 ">
             <mat-label>Angle</mat-label>
             <input matInput type="text" [(ngModel)]="degree" maxlength="3" appDegree />
           </mat-form-field>
         </ng-container>
         <div class="col">
-          <div class="d-flex justify-content-around">
+          <div class="d-flex justify-content-around mt-4">
             <input [(colorPicker)]="color1" class="bd text-white" [value]="color1" [style.background]="color1"
               readonly />
-            <input [(colorPicker)]="color2" class="bd text-white" [value]="color2" [style.background]="color2"
+            <input [(colorPicker)]="color2" class="bd text-white mx-5" [value]="color2" [style.background]="color2"
               readonly />
           </div>
         </div>
 
-        <div class="col">
+        <div class="col mt-4 ">
           <div class="d-flex justify-content-center">
             <button mat-icon-button class="addButton" (click)="addInputField()">
               <mat-icon>add</mat-icon>
@@ -58,14 +58,14 @@
           </div>
 
         </div>
-        <div class="col d-flex justify-content-center gap-0">
+        <div class="col d-flex justify-content-center mt-4 ">
           <button mat-raised-button class="bd" color="primary" (click)="getLinearGradient()">Generate Gradient</button>
         </div>
-        <div class="col d-flex justify-content-center">
-          <mat-form-field appearance="outline" class="w-75">
-            <mat-label>Copy Value</mat-label>
-            <input matInput type="text" #colorvalue [value]="selectedColor" readonly />
-          </mat-form-field>
+        <mat-form-field appearance="fill" class="w-75 mt-4">
+          <mat-label>Copy Value</mat-label>
+          <input matInput type="text" #colorvalue [value]="selectedColor" readonly />
+        </mat-form-field>
+        <div class="col d-flex justify-content-center mt-4">
           <button mat-icon-button (click)="copyValue(colorvalue.value)">
             <mat-icon>content_copy</mat-icon>
           </button>
